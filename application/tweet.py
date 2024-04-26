@@ -5,11 +5,11 @@ from typing import Iterable
 import tweepy
 from pydantic import BaseModel
 
-from api.dtos.tweet import TweetWeatherRequest
-from api.entities import BaseEntity
-from api.entities.tweet import TweetWeatherEntity
-from api.application import BaseApplication
-from api.vendor.owmpy import OpenWeatherMap
+from dtos.tweet import TweetWeatherRequest
+from entities import BaseEntity
+from entities.tweet import TweetWeatherEntity
+from application import BaseApplication
+from vendor.owmpy import OpenWeatherMap
 
 
 class TweetWeather(BaseApplication):

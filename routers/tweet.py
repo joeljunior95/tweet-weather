@@ -3,8 +3,8 @@ from typing import List
 
 from fastapi import APIRouter
 
-from api.dtos.tweet import TweetWeatherRequest, TweetWeatherResponse
-from api.application.tweet import TweetWeather
+from dtos.tweet import TweetWeatherRequest, TweetWeatherResponse
+from application.tweet import TweetWeather
 
 router = APIRouter()
 

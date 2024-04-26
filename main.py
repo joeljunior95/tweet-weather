@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 
-from api.routers import tweet
+from routers import tweet
 
 load_dotenv("api/.env")
 

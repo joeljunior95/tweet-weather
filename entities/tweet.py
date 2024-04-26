@@ -2,8 +2,8 @@
 from dataclasses import dataclass
 from typing import Optional, TypedDict, List
 
-from api.entities import BaseEntity
-from api.vendor.owmpy.models import DaySummary
+from entities import BaseEntity
+from vendor.owmpy.models import DaySummary
 
 
 class TweetWeather(TypedDict):
