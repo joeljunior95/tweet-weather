@@ -25,7 +25,8 @@ class TweetWeather(BaseApplication):
         self.bearer_token = getenv("TWITTER_BEARER_TOKEN")
 
     async def execute(self) -> BaseEntity:
-        weather = OpenWeatherMap(self.api_key, self.request.location)
+        location =  f"{self.request.city},{self.request.state},{self.request.country}"
+        weather = OpenWeatherMap(self.api_key, location)
         forecasts = weather.weather_info(None,days_forward=6)
 
         client = tweepy.Client(self.bearer_token,
