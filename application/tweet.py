@@ -9,7 +9,9 @@ from dtos.tweet import TweetWeatherRequest
 from entities import BaseEntity
 from entities.tweet import TweetWeatherEntity
 from application import BaseApplication
-from vendor.owmpy import OpenWeatherMap
+from owmpy import OpenWeatherMap
+from owmpy.errors import OWMException
+from errors.tweet import TweetException
 
 
 class TweetWeather(BaseApplication):
@@ -27,7 +29,11 @@ class TweetWeather(BaseApplication):
     async def execute(self) -> BaseEntity:
         location =  f"{self.request.city},{self.request.state},{self.request.country}"
         weather = OpenWeatherMap(self.api_key, location)
-        forecasts = weather.weather_info(None,days_forward=6)
+
+        try:
+            forecasts = weather.weather_info(None,days_forward=5)
+        except OWMException as exc:
+            raise TweetException(f"Error in the parameters sent to, or instability of, OpenWeatherMap Server. {exc}")
 
         client = tweepy.Client(self.bearer_token,
                         self.consumer_key,

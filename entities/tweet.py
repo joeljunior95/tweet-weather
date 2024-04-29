@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Optional, TypedDict, List
 
 from entities import BaseEntity
-from vendor.owmpy.models import DaySummary
+from owmpy.models import DaySummary
 
 
 class TweetWeather(TypedDict):
