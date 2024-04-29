@@ -19,7 +19,7 @@ TWITTER_BEARER_TOKEN
 ```
 
 To use the service call the endpoint in the image below specifying the city, state and country of the location:
-![alt text](docs/endpoint.png)
+![endpoint image](docs/endpoint.png)
 
-The architectuere of the solution:
-![alt text](docs/architecture.png)
+The architecture of the solution:
+![architecture image](docs/architecture.png)
